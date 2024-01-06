@@ -1,0 +1,8 @@
+name: dart_blockchain
+description: simple blockhain implementation in dart
+version: 0.0.5
+environment:
+  sdk: ">=3.1.5 <4.0.0"
+
+dependencies:
+  crypto: ^3.0.3

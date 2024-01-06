@@ -1,0 +1,11 @@
+version: '3'
+services:
+  geth-node:
+    image: ethereum/client-go
+    command: --http --http.addr 0.0.0.0 --http.corsdomain "*" --http.api web3,eth,debug,personal,net --http.vhosts "*" --ws --ws.api web3,eth,debug,personal,net --vmdebug --dev 
+    expose:
+      - "8545"
+      - "30303"
+    ports:
+      - "8545:8545"
+      - "30303:30303"
