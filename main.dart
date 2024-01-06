@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'Block/block.dart';
 import 'Blockchain/chain.dart';
 
 Future<void> main() async {
@@ -24,10 +25,9 @@ Future<void> main() async {
         print("------------------------------------");
         stdout.write("Enter data to store in block: ");
         String? name = stdin.readLineSync();
-        myBlockchain.addBlock(name!);
+        Block b = myBlockchain.addBlock(name!);
+        print("Block ${b.index + 1} mined with nonce ${b.nonce}: ${b.hash}");
         print("Block count: ${myBlockchain.chain.length}");
-        print(
-            "Block mined with nonce ${myBlockchain.chain[i].nonce}: ${myBlockchain.chain[i].hash}");
         print("------------------------------------");
         break;
       case 1:
